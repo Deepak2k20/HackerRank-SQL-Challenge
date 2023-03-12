@@ -1,0 +1,2 @@
+SELECT CEIL(AVG(Salary) - AVG(replace(Salary,0,''))) as AvgErrorInSalary
+FROM Employees;
