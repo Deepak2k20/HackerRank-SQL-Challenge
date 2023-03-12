@@ -1,0 +1,8 @@
+SELECT name||'('||substr(occupation,0,1)||')' as NameWithOccupation
+FROM Occupations
+ORDER BY name;
+
+SELECT 'There are a total of '|| count(occupation)||' '||lower(occupation)||'s.'
+FROM Occupations
+GROUP BY occupation
+ORDER BY count(occupation), occupation;
