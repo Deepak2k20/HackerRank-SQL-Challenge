@@ -1,0 +1,6 @@
+SELECT earnings, cnt FROM(
+SELECT salary * months as earnings, COUNT(*) as cnt, ROW_NUMBER() OVER(ORDER BY salary * months DESC) as rn
+FROM Employee
+GROUP BY salary * months
+ORDER BY earnings DESC)
+WHERE rn = 1;
