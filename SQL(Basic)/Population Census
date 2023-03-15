@@ -1,0 +1,4 @@
+SELECT SUM(ct.Population) as CitiesPopulation
+FROM City ct INNER JOIN Country cr
+ON ct.CountryCode = cr.Code
+WHERE cr.Continent = 'Asia';
