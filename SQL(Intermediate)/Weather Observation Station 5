@@ -1,0 +1,15 @@
+SELECT * FROM(
+    SELECT City, LENGTH(City) as LengthOfCity
+    FROM Station
+    GROUP BY City
+    ORDER BY LENGTH(City), City
+    )
+WHERE ROWNUM = 1
+UNION
+SELECT * FROM(
+    SELECT City, LENGTH(City) as LengthOfCity
+    FROM Station
+    GROUP BY City
+    ORDER BY LENGTH(City) DESC, City
+    )
+WHERE ROWNUM = 1;
